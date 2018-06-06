@@ -38,7 +38,7 @@ namespace Viewer
                                              autoAck: true,
                                              consumer: consumer);
 
-                    ReadLineWithMessage("Aperte qualquer tecla para sair");
+                    ReadLineWithMessage("Aperte qualquer tecla para sair\n");
                 }
             }
         }

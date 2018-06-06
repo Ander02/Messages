@@ -31,8 +31,11 @@ namespace Viewer
                     var consumer = new EventingBasicConsumer(modelChanel);
                     consumer.Received += (model, ev) =>
                     {
-                        var message = ev.Body.GetString();
-                        Console.WriteLine("-> " + message);
+                        var messageJson = ev.Body.GetString();
+
+                        var message = new Message(messageJson);
+
+                        Console.WriteLine("-> " + message.ToString());
                     };
 
                     modelChanel.BasicConsume(queue: queueName,

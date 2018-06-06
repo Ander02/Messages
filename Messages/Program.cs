@@ -8,6 +8,8 @@ namespace Sender
     {
         public static void Main(string[] args)
         {
+            var userName = Util.ReadLineWithMessage("Digite seu nome: ");
+
             Console.WriteLine("Bem vindo!");
             Console.WriteLine("Digite suas mensagens ou exit para sair");
 
@@ -32,14 +34,21 @@ namespace Sender
 
                     while (true)
                     {
-                        var message = Util.ReadLineWithMessage("> ");
+                        var content = Util.ReadLineWithMessage("> ");
 
-                        if (message.Equals("exit")) break;
+                        if (content.Equals("exit")) break;
 
-                        modelChanel.BasicPublish(exchangeName, "", properties, message.GetBytes());
+                        var message = new Message
+                        {
+                            Content = content,
+                            Date = DateTime.Now,
+                            UserName = userName
+                        };
+
+                        modelChanel.BasicPublish(exchangeName, "", properties, message.ToJson().GetBytes());
                     }
                 }
             }
-        }        
+        }
     }
 }

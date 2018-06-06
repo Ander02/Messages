@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sender", "Messages\Sender.c
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Viewer", "Viewer\Viewer.csproj", "{2F0E3054-37FE-4595-90CE-81247772F164}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility", "Utility\Utility.csproj", "{61683CFA-0771-4E95-91EF-C5174652CDA2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{2F0E3054-37FE-4595-90CE-81247772F164}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F0E3054-37FE-4595-90CE-81247772F164}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F0E3054-37FE-4595-90CE-81247772F164}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61683CFA-0771-4E95-91EF-C5174652CDA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61683CFA-0771-4E95-91EF-C5174652CDA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61683CFA-0771-4E95-91EF-C5174652CDA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61683CFA-0771-4E95-91EF-C5174652CDA2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

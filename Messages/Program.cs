@@ -1,5 +1,6 @@
 ﻿using RabbitMQ.Client;
 using System;
+using Utility;
 
 namespace Sender
 {
@@ -26,12 +27,12 @@ namespace Sender
                                              arguments: null);
                     var properties = modelChanel.CreateBasicProperties();
 
-                    var exchangeName = ReadLineWithMessage("Informe a exchange que você gostaria de entrar: ");
+                    var exchangeName = Util.ReadLineWithMessage("Informe a exchange que você gostaria de entrar: ");
                     modelChanel.ExchangeDeclare(exchange: exchangeName, type: "fanout");
 
                     while (true)
                     {
-                        var message = ReadLineWithMessage("> ");
+                        var message = Util.ReadLineWithMessage("> ");
 
                         if (message.Equals("exit")) break;
 
@@ -39,12 +40,6 @@ namespace Sender
                     }
                 }
             }
-        }
-        public static string ReadLineWithMessage(string message)
-        {
-            Console.Write(message);
-            return Console.ReadLine();
-        }
+        }        
     }
 }
-

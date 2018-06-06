@@ -1,6 +1,7 @@
 ﻿using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System;
+using Utility;
 
 namespace Viewer
 {
@@ -19,7 +20,7 @@ namespace Viewer
             {
                 using (var modelChanel = connection.CreateModel())
                 {
-                    var exchangeName = ReadLineWithMessage("Informe a exchange que você gostaria de ouvir mensagens: ");
+                    var exchangeName = Util.ReadLineWithMessage("Informe a exchange que você gostaria de ouvir mensagens: ");
                     modelChanel.ExchangeDeclare(exchange: exchangeName, type: "fanout");
 
                     var queueName = modelChanel.QueueDeclare().QueueName;
@@ -38,15 +39,9 @@ namespace Viewer
                                              autoAck: true,
                                              consumer: consumer);
 
-                    ReadLineWithMessage("Aperte qualquer tecla para sair\n");
+                    Util.ReadLineWithMessage("Para sair, pressione qualquer tecla.\n");
                 }
             }
-        }
-
-        public static string ReadLineWithMessage(string message)
-        {
-            Console.Write(message);
-            return Console.ReadLine();
         }
     }
 }
